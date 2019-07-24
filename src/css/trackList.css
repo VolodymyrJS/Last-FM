@@ -1,0 +1,71 @@
+body {
+  background-color: #282c34;
+  color: #61dafb;
+  counter-reset: my-sec-counter;
+}
+
+.app {
+  text-align: center;
+  min-height: 100vh;
+  padding: 0 20%;
+}
+
+.app-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #61dafb;
+  border: 2px solid #ff8c00;
+}
+
+.track-item {
+  margin-left: 0;
+  list-style: none;
+}
+
+li {
+  min-height: 140px;
+  text-align: left;
+  font-size: 19px;
+  font-family: 'Times New Roman', Times, serif !important;
+  font-weight: 600;
+  font-style: italic;
+  position: relative;
+  margin-bottom: 1.5em;
+  border: 1px solid #61dafb;
+  padding: 0.6em;
+  border-radius: 4px;
+  background: #fefefe;
+  color: #222222;
+  font-family: 'Trebuchet MS', 'Lucida Sans';
+  width: 80%;
+  max-width: 550px;
+  margin: 1em auto;
+  padding: 1em;
+  border-radius: 10px;
+  background: rgb(80, 80, 80)
+    radial-gradient(
+      circle at 50% 0,
+      rgba(255, 255, 255, 0.65),
+      rgba(255, 255, 255, 0.35)
+    );
+  box-shadow: inset rgba(31, 29, 29, 0.6) 0 -3px 8px,
+    inset rgba(252, 255, 255, 0.7) 0 3px 8px, rgba(0, 0, 0, 0.8) 0 3px 8px -3px;
+}
+
+.track-item li:before {
+  position: absolute;
+  top: -0.7em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  font-size: 18px;
+  font-weight: bold;
+  color: #61dafb;
+  background: #282c34;
+  border-radius: 50%;
+  counter-increment: my-sec-counter;
+  content: counter(my-sec-counter);
+}

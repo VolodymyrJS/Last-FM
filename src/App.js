@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+import axios from 'axios';
+import storeConfig from './store/storeConfig';
+import { Provider } from 'react-redux';
+import { queryTrack } from './fetchConfig';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+async function getData() {
+  const listOfTracks = await axios.get(queryTrack);
+
+  const store = storeConfig({
+    tracks: listOfTracks.data.tracks.track.slice(0, 5),
+    isFetching: false
+  });
+
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('root')
   );
 }
 
-export default App;
+getData();
