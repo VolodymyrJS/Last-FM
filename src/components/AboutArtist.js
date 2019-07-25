@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import uuidv from 'uuid/v4';
 import { putArtistDataToState } from '../store/actions/actions';
+import '../css/aboutArtist.css';
 
 class ProductView extends React.Component {
   componentDidMount() {
@@ -11,10 +12,10 @@ class ProductView extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="general-styles-about-artist-page">
         {this.props.aboutArtist && (
           <div>
-            <h1>{this.props.aboutArtist.name}</h1>
+            <h1 className="artist-name">{this.props.aboutArtist.name}</h1>
             <div>
               <h3>Images:</h3>
               <div>
@@ -24,17 +25,17 @@ class ProductView extends React.Component {
                     <img alt="img" key={uuidv()} src={imgUrl} />
                   ))}
               </div>
-              <div className="artist-tegs">
-                <h3>Tags: </h3>
+              <h2>
+                <div className="highlight-tags-title">Tags: </div>
                 {this.props.aboutArtist.tags.tag
                   .map(element => element.name)
                   .map(tag => (
-                    <p key={uuidv()}>{tag}</p>
+                      <p className="artist-tags" key={uuidv()}>{tag}</p>
                   ))}
-              </div>
+              </h2>
             </div>
-            <h4>{this.props.aboutArtist.bio.content}</h4>
-            <Link to={`/`}>Back to home</Link>
+            <p className="artist-bio-content">{this.props.aboutArtist.bio.content}</p>
+            <Link className="back-home-link" to={`/`}>Back to home</Link>
           </div>
         )}
       </div>
