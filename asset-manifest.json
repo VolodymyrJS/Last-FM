@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Last-FM/static/css/main.80a8dc42.chunk.css",
+    "main.js": "/Last-FM/static/js/main.c4e7fd74.chunk.js",
+    "main.js.map": "/Last-FM/static/js/main.c4e7fd74.chunk.js.map",
+    "runtime~main.js": "/Last-FM/static/js/runtime~main.54553cfb.js",
+    "runtime~main.js.map": "/Last-FM/static/js/runtime~main.54553cfb.js.map",
+    "static/js/2.f13c5dc7.chunk.js": "/Last-FM/static/js/2.f13c5dc7.chunk.js",
+    "static/js/2.f13c5dc7.chunk.js.map": "/Last-FM/static/js/2.f13c5dc7.chunk.js.map",
+    "index.html": "/Last-FM/index.html",
+    "precache-manifest.87a5e451303197513ae8c7e520931165.js": "/Last-FM/precache-manifest.87a5e451303197513ae8c7e520931165.js",
+    "service-worker.js": "/Last-FM/service-worker.js",
+    "static/css/main.80a8dc42.chunk.css.map": "/Last-FM/static/css/main.80a8dc42.chunk.css.map"
+  }
+}
