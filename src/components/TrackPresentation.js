@@ -2,27 +2,27 @@ import React from 'react';
 import uuidv from 'uuid/v4';
 import { connect } from 'react-redux';
 import {
-  expandOneDeal,
-  hideOneDeal,
+  expandOneTrack,
+  hideOneTrack,
   putArtistDataToState
 } from '../store/actions/actions';
 import { Link } from 'react-router-dom';
 import '../css/trackPresentation.css';
 
-class DealItem extends React.Component {
-  hideOneDealClick = event => {
+class TrackItem extends React.Component {
+  hideOneTrackClick = event => {
     event.preventDefault();
     event.stopPropagation();
-    this.props.hideOneDeal(this.props.deal.listeners);
+    this.props.hideOneTrack(this.props.track.listeners);
   };
   showImagesForOneArtist = event => {
     event.preventDefault();
-    this.props.expandOneDeal(this.props.deal.listeners);
+    this.props.expandOneTrack(this.props.track.listeners);
   };
 
   render() {
-    const { artist, name, playcount, image } = this.props.deal;
-    var imageSrc = image.map(element => element['#text']);
+    const { artist, name, playcount, image } = this.props.track;
+    const imageSrc = image.map(element => element['#text']);
     return (
       <div>
         <div>Artist: {artist.name}</div>
@@ -30,7 +30,7 @@ class DealItem extends React.Component {
           Track: <span className="highlite-track-title">{name}</span>
         </div>
         <div>Playcount: {playcount}</div>
-        {this.props.deal.isExpanded && (
+        {this.props.track.isExpanded && (
           <div className="track-prsentation-image">
             {imageSrc.map(imgUrl => (
               <span key={uuidv()}>
@@ -43,7 +43,7 @@ class DealItem extends React.Component {
           <a
             className="hide-track-button"
             href="$"
-            onClick={this.hideOneDealClick}
+            onClick={this.hideOneTrackClick}
           >
             Hide track
           </a>
@@ -67,5 +67,5 @@ class DealItem extends React.Component {
 
 export default connect(
   null,
-  { expandOneDeal, hideOneDeal, putArtistDataToState }
-)(DealItem);
+  { expandOneTrack, hideOneTrack, putArtistDataToState }
+)(TrackItem);

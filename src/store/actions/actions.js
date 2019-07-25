@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { queryTrack, queryArtist } from '../../fetchConfig';
 
-export const expandOneDeal = dealKey => ({ type: 'SHOW_IMAGE', dealKey });
+export const expandOneTrack = trackKey => ({ type: 'SHOW_IMAGE', trackKey });
 
-export const hideOneDeal = dealKey => ({ type: 'HIDE_TRACK', dealKey });
+export const hideOneTrack = trackKey => ({ type: 'HIDE_TRACK', trackKey });
 
 export const fetchMoreTracks = () => {
   return async dispatch => {

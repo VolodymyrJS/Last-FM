@@ -10,8 +10,8 @@ class FetchMoreArtistButton extends React.Component {
             <button className="show-all-tracks-button"
                 disabled={this.props.isFetching}
                 onClick={this.props.fetchMoreTracks}
-            >
-                Show all tracks
+        >
+        Show all tracks
       </button>
         </div>
     );

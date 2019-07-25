@@ -3,16 +3,16 @@ export default (state, action) => {
     case 'SHOW_IMAGE':
       return {
         ...state,
-        tracks: state.tracks.map(deal => ({
-          ...deal,
-          isExpanded: deal.listeners === action.dealKey
+        tracks: state.tracks.map(track => ({
+          ...track,
+          isExpanded: track.listeners === action.trackKey
         }))
       };
     case 'HIDE_TRACK':
       return {
         ...state,
         tracks: state.tracks.filter(artist => {
-          return artist.listeners !== action.dealKey;
+          return artist.listeners !== action.trackKey;
         })
       };
     case 'SHOW_ALL_TRACKS':

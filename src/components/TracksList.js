@@ -4,14 +4,14 @@ import TrackPresentation from './TrackPresentation';
 import { connect } from 'react-redux';
 import '../css/trackList.css';
 
-class DealList extends React.Component {
+class TrackList extends React.Component {
   render() {
     return (
       <div className="app">
-        {this.props.tracks.map(deal => (
+        {this.props.tracks.map(track => (
           <ol className="track-item" key={uuidv()}>
             <li>
-              <TrackPresentation deal={deal} />
+              <TrackPresentation track={track} />
             </li>
           </ol>
         ))}
@@ -24,4 +24,4 @@ const mapStateToProps = state => ({
   tracks: state.tracks
 });
 
-export default connect(mapStateToProps)(DealList);
+export default connect(mapStateToProps)(TrackList);
